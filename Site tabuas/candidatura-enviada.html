@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Candidatura enviada | Tábuas.Come</title>
+<meta name="robots" content="noindex, nofollow" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  html { scroll-snap-type: none; }
+  body { background: var(--black); min-height: 100vh; display: flex; flex-direction: column; }
+  .done-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 80px 24px; }
+  .done-card { max-width: 520px; width: 100%; text-align: center; padding: 48px 36px; border: 1px solid rgba(184, 134, 63, 0.35); border-radius: 14px; }
+  .done-icon { width: 64px; height: 64px; margin: 0 auto 22px; border-radius: 50%; border: 1px solid var(--gold-light); color: var(--gold-light); display: flex; align-items: center; justify-content: center; }
+  .done-card h1 { font-size: clamp(28px, 4vw, 40px); color: var(--cream); text-transform: uppercase; margin: 0 0 14px; }
+  .done-card p { color: var(--cream-dim); font-size: 16px; line-height: 1.7; margin: 0 0 10px; }
+  .done-card .done-hint { font-size: 13px; opacity: 0.75; margin-top: 4px; }
+  .done-card .btn { margin-top: 28px; justify-content: center; min-width: 240px; background: var(--gold-light); border-color: var(--gold-light); color: var(--black); font-weight: 500; }
+  .done-card .btn:hover { background: var(--gold); border-color: var(--gold); }
+  @media (max-width: 760px) {
+    .done-wrap { padding: 56px 20px; }
+    .done-card { padding: 36px 22px; }
+    .done-card .btn { width: 100%; min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<main class="done-wrap">
+  <div class="done-card">
+    <div class="done-icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Candidatura enviada!</h1>
+    <p>Obrigado pelo seu interesse em fazer parte da equipa do Tábuas.Come. Vamos analisar a sua candidatura e entraremos em contacto consigo.</p>
+    <p class="done-hint">Se o seu email abriu, confirme que carregou em enviar.</p>
+    <a href="index.html" class="btn">Voltar ao website</a>
+  </div>
+</main>
+
+<footer class="site-footer" id="contactos">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="img/tabuas-logo-hd.png" alt="Tábuas, Restaurante & Steakhouse" class="footer-logo-img" />
+        <p class="footer-tagline">Restaurante &amp; Steakhouse</p>
+        <div class="footer-badges">
+          <a href="https://livrodeelogios.com/" class="complaints-badge compliments-badge" target="_blank" rel="noopener">
+            <span>LIVRO DE<br/>ELOGIOS</span>
+          </a>
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener" class="complaints-badge">
+            <span>LIVRO DE<br/>RECLAMAÇÕES</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-details">
+        <div class="footer-legal-links footer-legal-links--details">
+          <a href="cookies.html">Política de Cookies</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+          <a href="https://livrodeelogios.com/" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tábuas.Come · Todos os direitos reservados.</span>
+      <div class="footer-bottom-links">
+        <a href="cookies.html">Política de Cookies</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="https://livrodeelogios.com/" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+      </div>
+      <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
