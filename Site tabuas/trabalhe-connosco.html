@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trabalhe Connosco | Tábuas.Come, Castelo Branco</title>
+<meta name="description" content="Trabalhe Connosco: envie o seu CV para a equipa do Tábuas.Come em Castelo Branco." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  html { scroll-snap-type: none; }
+  body { background: var(--black); }
+  .page-head { position: relative; z-index: 5; padding: 56px 32px 20px; max-width: var(--container); margin: 0 auto; }
+  .back-link { display: inline-block; margin-bottom: 4px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); }
+  .page-head h1 { font-size: clamp(26px, 3vw, 40px); text-transform: uppercase; color: var(--cream); margin-bottom: 6px; text-align: center; }
+  .page-wrap { max-width: 980px; margin: 0 auto; padding: 20px 32px 90px; }
+  .page-lede { max-width: 620px; margin: 0 auto; text-align: center; color: var(--cream-dim); font-size: 16px; line-height: 1.8; }
+  .page-btn { background: var(--gold-light); border-color: var(--gold-light); color: var(--black); font-weight: 500; }
+  .page-btn:hover { background: var(--gold); border-color: var(--gold); }
+  .work-card { max-width: 640px; margin: 44px auto 0; padding: 40px 36px; border: 1px solid rgba(184, 134, 63, 0.35); border-radius: 12px; }
+  .work-card h2 { font-size: 13px; font-family: var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin: 0 0 22px; text-align: center; }
+
+  .apply-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field--full { grid-column: 1 / -1; }
+  .field label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 15px;
+    color: var(--cream);
+    background: rgba(244, 239, 228, 0.04);
+    border: 1px solid rgba(244, 239, 228, 0.18);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .field select { appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--gold-light) 50%), linear-gradient(135deg, var(--gold-light) 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 36px; }
+  .field select option { background: #141210; color: var(--cream); }
+  .field textarea { min-height: 110px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold-light); }
+  .field input:user-invalid, .field select:user-invalid { border-color: #b5543c; }
+
+  .consent { grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; color: var(--cream-dim); font-size: 13px; line-height: 1.6; }
+  .consent input { margin-top: 3px; accent-color: var(--gold-light); width: 16px; height: 16px; flex: 0 0 auto; }
+  .consent a { color: var(--gold-light); text-decoration: underline; }
+
+  .form-actions { grid-column: 1 / -1; text-align: center; margin-top: 6px; }
+  .form-actions .btn { justify-content: center; min-width: 240px; }
+  .form-note { margin: 16px 0 0; color: var(--cream-dim); font-size: 13px; line-height: 1.7; text-align: center; }
+  .form-note strong { color: var(--cream); font-weight: 500; }
+  .form-note a { color: var(--gold-light); }
+  .form-sent { display: none; margin-top: 18px; padding: 14px 16px; border-radius: 8px; background: rgba(217, 184, 120, 0.12); color: var(--cream); font-size: 14px; line-height: 1.6; text-align: center; }
+  .form-sent.is-visible { display: block; }
+  .form-error { display: none; margin-top: 18px; padding: 14px 16px; border-radius: 8px; background: rgba(181, 84, 60, 0.16); color: var(--cream); font-size: 14px; line-height: 1.6; text-align: center; }
+  .form-error.is-visible { display: block; }
+  .form-error a { color: var(--gold-light); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .apply-form button[disabled] { opacity: 0.6; cursor: wait; }
+  @media (max-width: 760px) {
+    .page-head { padding: 22px 20px 0; }
+    .back-link { display: block; margin-bottom: 26px; font-size: 11px; }
+    .page-wrap { padding: 18px 24px 56px; }
+    .page-lede { font-size: 15px; }
+    .work-card { margin-top: 32px; padding: 26px 18px; }
+    .apply-form { grid-template-columns: 1fr; gap: 16px; }
+    .form-actions .btn { width: 100%; min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <a href="index.html" class="back-link">&larr; Voltar ao site</a>
+  <h1>Trabalhe Connosco</h1>
+</div>
+
+<div class="page-wrap">
+  <p class="page-lede">Gostava de fazer parte da equipa do Tábuas.Come? Procuramos pessoas com gosto pela restauração, pelo serviço e pela boa mesa, na sala e na cozinha.</p>
+
+  <div class="work-card">
+    <h2>Envie a sua candidatura</h2>
+    <form class="apply-form" id="applyForm" novalidate>
+      <div class="field">
+        <label for="fNome">Nome *</label>
+        <input id="fNome" name="nome" type="text" autocomplete="given-name" required />
+      </div>
+      <div class="field">
+        <label for="fApelido">Apelido *</label>
+        <input id="fApelido" name="apelido" type="text" autocomplete="family-name" required />
+      </div>
+      <div class="field">
+        <label for="fEmail">Email *</label>
+        <input id="fEmail" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="fTel">Telemóvel *</label>
+        <input id="fTel" name="telemovel" type="tel" autocomplete="tel" required />
+      </div>
+      <div class="field">
+        <label for="fFuncao">Função pretendida *</label>
+        <select id="fFuncao" name="funcao" required>
+          <option value="">Selecione</option>
+          <option>Sala</option>
+          <option>Cozinha</option>
+          <option>Bar</option>
+          <option>Copa</option>
+          <option>Outra</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fOrigem">Onde soube da vaga? *</label>
+        <select id="fOrigem" name="origem" required>
+          <option value="">Selecione</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>Site Tábuas.Come</option>
+          <option>Família / amigos</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="field field--full">
+        <label for="fLinguas">Línguas e nível</label>
+        <input id="fLinguas" name="linguas" type="text" placeholder="Ex.: Português (nativo), Inglês (intermédio)" />
+      </div>
+      <div class="field field--full">
+        <label for="fCv">Link do CV <span style="text-transform:none;letter-spacing:0;opacity:.7">(opcional)</span></label>
+        <input id="fCv" name="cv" type="text" inputmode="url" autocapitalize="off" placeholder="Ex.: link do Google Drive, Dropbox ou LinkedIn" />
+      </div>
+      <div class="field field--full">
+        <label for="fMsg">Apresentação</label>
+        <textarea id="fMsg" name="mensagem" placeholder="Fale-nos um pouco de si e da sua experiência."></textarea>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="fWebsite">Website</label>
+        <input id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <label class="consent">
+        <input id="fConsent" type="checkbox" required />
+        <span>Autorizo o tratamento dos meus dados pessoais para efeitos de recrutamento, de acordo com a <a href="privacidade.html">Política de Privacidade</a>. *</span>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn page-btn" id="applySubmit">Enviar candidatura</button>
+        <p class="form-note">Ao carregar no botão, abre-se o seu email com a candidatura já preenchida. Só tem de carregar em enviar.</p>
+        <p class="form-sent" id="formSent" role="status">A sua candidatura foi preparada no seu email. Carregue em enviar para a concluir. Obrigado!</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer" id="contactos">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="img/tabuas-logo-hd.png" alt="Tábuas, Restaurante & Steakhouse" class="footer-logo-img" />
+        <p class="footer-tagline">Restaurante &amp; Steakhouse</p>
+        <div class="footer-badges">
+          <a href="https://livrodeelogios.com/elogiar/tabuascome" class="complaints-badge compliments-badge" target="_blank" rel="noopener">
+            <span>LIVRO DE<br/>ELOGIOS</span>
+          </a>
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener" class="complaints-badge">
+            <span>LIVRO DE<br/>RECLAMAÇÕES</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-details">
+        <div class="footer-legal-links footer-legal-links--details">
+          <a href="cookies.html">Política de Cookies</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+          <a href="https://livrodeelogios.com/elogiar/tabuascome" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tábuas.Come · Todos os direitos reservados.</span>
+      <div class="footer-bottom-links">
+        <a href="cookies.html">Política de Cookies</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="https://livrodeelogios.com/elogiar/tabuascome" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+      </div>
+      <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(() => {
+  // Sem servidor: a candidatura abre no email de quem se candidata, já preenchida, pronta a enviar.
+  const RH_EMAIL = "rh.tabuas.come@gmail.com";
+  const form = document.getElementById("applyForm");
+  const sent = document.getElementById("formSent");
+  const v = (id) => document.getElementById(id).value.trim();
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sent.classList.remove("is-visible");
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    if (v("fWebsite")) return; // robô
+    const nome = `${v("fNome")} ${v("fApelido")}`;
+    const subject = `Candidatura: ${v("fFuncao")} | ${nome}`;
+    const body = [
+      `Nome: ${nome}`,
+      `Email: ${v("fEmail")}`,
+      `Telemóvel: ${v("fTel")}`,
+      `Função pretendida: ${v("fFuncao")}`,
+      `Línguas: ${v("fLinguas") || "(não indicado)"}`,
+      `Onde soube da vaga: ${v("fOrigem")}`,
+      `Link do CV: ${v("fCv") || "(não indicado)"}`,
+      "",
+      "Apresentação:",
+      v("fMsg") || "(não indicado)",
+      "",
+      "Autorizo o tratamento dos meus dados pessoais para efeitos de recrutamento.",
+    ].join("\n");
+    // link com data-mail: o email-links.js mostra o plano B (Gmail/Outlook) se nada abrir
+    const link = document.createElement("a");
+    link.href = `mailto:${RH_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    link.setAttribute("data-mail", "");
+    link.hidden = true;
+    document.body.appendChild(link);
+
+    // se a app de email abrir, a página perde o foco: ao voltar, mostra a confirmação
+    const DONE_URL = "candidatura-enviada.html";
+    let left = false;
+    const markLeft = () => { left = true; };
+    window.addEventListener("blur", markLeft, { once: true });
+    document.addEventListener("visibilitychange", markLeft, { once: true });
+    link.click();
+    link.remove();
+    sent.classList.add("is-visible");
+    setTimeout(() => {
+      if (left) {
+        window.location.href = DONE_URL;
+        return;
+      }
+      // sem app de email: o plano B (Gmail/Outlook) está aberto; ao escolher, segue para a confirmação
+      document.addEventListener("click", (ev) => {
+        if (ev.target.closest('.mail-fallback [data-act="gmail"], .mail-fallback [data-act="outlook"]')) {
+          setTimeout(() => { window.location.href = DONE_URL; }, 400);
+        }
+      });
+    }, 1600);
+  });
+})();
+</script>
+<script src="js/email-links.js?v=1"></script>
+
+</body>
+</html>

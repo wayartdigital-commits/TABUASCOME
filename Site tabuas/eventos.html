@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eventos | Tábuas.Come, Castelo Branco</title>
+<meta name="description" content="Eventos: jantares temáticos e novidades do Tábuas.Come em Castelo Branco." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  html { scroll-snap-type: none; }
+  body { background: var(--black); }
+  .page-head { position: relative; z-index: 5; padding: 56px 32px 20px; max-width: var(--container); margin: 0 auto; }
+  .back-link { display: inline-block; margin-bottom: 4px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); }
+  .page-head h1 { font-size: clamp(26px, 3vw, 40px); text-transform: uppercase; color: var(--cream); margin-bottom: 6px; text-align: center; }
+  .page-wrap { max-width: 980px; margin: 0 auto; padding: 20px 32px 90px; }
+  .page-lede { max-width: 620px; margin: 0 auto; text-align: center; color: var(--cream-dim); font-size: 16px; line-height: 1.8; }
+  .page-btn { background: var(--gold-light); border-color: var(--gold-light); color: var(--black); font-weight: 500; }
+  .page-btn:hover { background: var(--gold); border-color: var(--gold); }
+  .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 420px)); justify-content: center; gap: 28px; margin-top: 44px; }
+  .event-card { background: rgba(244, 239, 228, 0.04); border: 1px solid rgba(244, 239, 228, 0.1); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  .event-card figure { position: relative; margin: 0; }
+  .event-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+  .event-card figcaption { position: absolute; right: 8px; bottom: 6px; font-size: 10px; letter-spacing: 0.04em; color: rgba(244, 239, 228, 0.75); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); }
+  .event-notes { margin-top: 14px !important; padding-top: 12px; border-top: 1px solid rgba(244, 239, 228, 0.1); font-size: 13px !important; }
+  .event-card .btn { margin-top: 18px; }
+  .event-card-body { padding: 22px 22px 26px; }
+  .event-date { margin: 0 0 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); }
+  .event-card h2 { font-size: 24px; margin: 0 0 10px; color: var(--cream); }
+  .event-card p { color: var(--cream-dim); font-size: 14.5px; line-height: 1.7; margin: 0; }
+  .events-empty { margin: 56px auto 0; max-width: 460px; text-align: center; padding: 36px 28px; border: 1px solid rgba(184, 134, 63, 0.35); border-radius: 12px; }
+  .events-empty h2 { font-size: 24px; margin: 0 0 10px; color: var(--gold-light); }
+  .events-empty p { color: var(--cream-dim); font-size: 14.5px; margin: 0 0 20px; }
+  .events-grid:has(.event-card) ~ .events-empty { display: none; }
+  @media (max-width: 760px) {
+    .page-head { padding: 22px 20px 0; }
+    .back-link { display: block; margin-bottom: 26px; font-size: 11px; }
+    .page-wrap { padding: 18px 24px 56px; }
+    .page-lede { font-size: 15px; }
+    .events-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+    .events-empty { margin-top: 40px; padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <a href="index.html" class="back-link">&larr; Voltar ao site</a>
+  <h1>Eventos</h1>
+</div>
+
+<div class="page-wrap">
+  <p class="page-lede">Jantares temáticos, provas de vinhos, datas especiais e momentos que já partilhámos consigo. Acompanhe aqui o que se passa no Tábuas.Come.</p>
+
+  <div class="events-grid">
+    <!--
+      MODELO DE EVENTO: copiar este bloco para cada evento novo (o mais recente primeiro).
+      Colocar a foto em img/eventos/ e trocar o nome do ficheiro.
+
+    <article class="event-card">
+      <img src="img/eventos/nome-da-foto.jpg" alt="Descrição da foto" loading="lazy" />
+      <div class="event-card-body">
+        <p class="event-date">Sábado, 18 Outubro 2026</p>
+        <h2>Título do evento</h2>
+        <p>Texto curto sobre o evento: o que é, a que horas, preço ou como reservar.</p>
+      </div>
+    </article>
+    -->
+    <article class="event-card">
+      <figure>
+        <img src="img/eventos/cozido-portuguesa.jpg" alt="Cozido à Portuguesa servido em travessa de barro" loading="lazy" />
+        <figcaption>Imagem ilustrativa</figcaption>
+      </figure>
+      <div class="event-card-body">
+        <p class="event-date">Todos os domingos · Almoço · A partir de 11 de outubro</p>
+        <h2>Domingos de Cozido à Portuguesa</h2>
+        <p>Todos os domingos ao almoço, o clássico Cozido à Portuguesa chega à mesa do Tábuas.Come, para partilhar em família ou entre amigos.</p>
+        <p class="event-notes">Reserva aconselhável. Prato disponível salvo ruturas.</p>
+        <a href="https://www.zomatobook.com/widget/makereservation03.aspx?id=362873XJ5J6Z" class="btn page-btn" target="_blank" rel="noopener noreferrer">Reservar Mesa</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="events-empty">
+    <h2>Em breve</h2>
+    <p>Estamos a preparar novidades. Siga-nos no Instagram para ser o primeiro a saber.</p>
+    <a href="https://www.instagram.com/tabuas.come/" class="btn page-btn" target="_blank" rel="noopener">@tabuas.come</a>
+  </div>
+</div>
+
+<footer class="site-footer" id="contactos">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="img/tabuas-logo-hd.png" alt="Tábuas, Restaurante & Steakhouse" class="footer-logo-img" />
+        <p class="footer-tagline">Restaurante &amp; Steakhouse</p>
+        <div class="footer-badges">
+          <a href="https://livrodeelogios.com/elogiar/tabuascome" class="complaints-badge compliments-badge" target="_blank" rel="noopener">
+            <span>LIVRO DE<br/>ELOGIOS</span>
+          </a>
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener" class="complaints-badge">
+            <span>LIVRO DE<br/>RECLAMAÇÕES</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-details">
+        <div class="footer-legal-links footer-legal-links--details">
+          <a href="cookies.html">Política de Cookies</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+          <a href="https://livrodeelogios.com/elogiar/tabuascome" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tábuas.Come · Todos os direitos reservados.</span>
+      <div class="footer-bottom-links">
+        <a href="cookies.html">Política de Cookies</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="https://livrodeelogios.com/elogiar/tabuascome" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+      </div>
+      <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
