@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contactos e Horário | Tábuas.Come, Castelo Branco</title>
+<meta name="description" content="Contactos do Tábuas.Come, restaurante e steakhouse em Castelo Branco. Morada, telefone, email e horário." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  html { scroll-snap-type: none; }
+  body { background: var(--black); }
+
+  .contact-page-head {
+    position: relative;
+    z-index: 5;
+    padding: 56px 32px 20px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .back-link { display: inline-block; margin-bottom: 4px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); }
+  .contact-page-head h1 { font-size: clamp(26px, 3vw, 40px); text-transform: uppercase; color: var(--cream); margin-bottom: 6px; text-align: center; }
+
+  .contact-page-wrap {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px 32px 90px;
+  }
+
+  .contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .contact-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 48px;
+  }
+  .contact-col--hours { border-left: 1px solid rgba(244, 239, 228, 0.12); }
+
+  .contact-page-wrap .location-pin { margin: 0 0 14px; }
+  .contact-page-wrap .location-address { margin: 0 0 22px; }
+  .contact-page-wrap .location-contacts { margin: 0 0 26px; gap: 10px; }
+  .contact-page-wrap .location-contact-line a { font-size: 17px; }
+  .contact-page-wrap .location-socials { margin: 0; }
+  .contact-page-wrap .hours-columns { margin: 0 0 30px; gap: 22px; }
+  .contact-page-wrap .location-cta-btn {
+    margin-top: 0;
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: var(--black);
+    font-weight: 500;
+  }
+  .contact-page-wrap .location-cta-btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .hours-title {
+    margin: 0 0 22px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-align: center;
+  }
+
+  @media (max-width: 760px) {
+    .contact-page-head { padding: 22px 20px 0; }
+    .back-link { display: block; margin-bottom: 26px; font-size: 11px; }
+    .contact-page-wrap { padding: 18px 24px 52px; }
+
+    /* uma só coluna, em lista */
+    .contact-card { display: flex; flex-direction: column; align-items: stretch; }
+    .contact-col { display: contents; }
+    .contact-page-wrap .location-pin { order: 1; }
+    .contact-page-wrap .location-address { order: 2; }
+    .contact-page-wrap .location-contacts { order: 3; }
+    .contact-page-wrap .hours-title { order: 4; }
+    .contact-page-wrap .hours-columns { order: 5; }
+    .contact-page-wrap .location-socials { order: 6; }
+    .contact-page-wrap .location-cta-btn { order: 7; }
+
+    .contact-page-wrap .location-pin { flex-direction: row; justify-content: center; gap: 8px; margin: 0 0 8px; }
+    .contact-page-wrap .location-pin svg { width: 18px; height: 18px; }
+    .contact-page-wrap .location-title { font-size: 20px; }
+    .contact-page-wrap .location-address { font-size: 14px; line-height: 1.5; margin: 0 0 22px; }
+
+    .contact-page-wrap .location-contacts { align-items: stretch; gap: 0; margin: 0; }
+    .contact-page-wrap .location-contact-line { justify-content: center; padding: 7px 0; }
+    .contact-page-wrap .location-contact-line a { font-size: 16px; }
+
+    .hours-title { margin: 36px 0 10px; font-size: 12px; }
+    .contact-page-wrap .hours-columns { display: flex; flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
+    .contact-page-wrap .hours-row { display: contents; }
+    .contact-page-wrap .hours-col {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 16px;
+      align-items: center;
+      text-align: left;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(244, 239, 228, 0.12);
+    }
+    .contact-page-wrap .hours-row-bottom .hours-col:first-child { border-top: 1px solid rgba(244, 239, 228, 0.12); }
+    .contact-page-wrap .hours-row-top .hours-col { order: 3; }
+    .contact-page-wrap .hours-col h4 { grid-row: 1 / span 2; margin: 0; font-size: 12px; }
+    .contact-page-wrap .hours-col p { grid-column: 2; text-align: right; font-size: 14px; margin: 1px 0; }
+
+    .contact-page-wrap .location-socials { justify-content: center; margin: 32px 0 0; }
+    .contact-page-wrap .location-cta-btn {
+      align-self: center;
+      margin-top: 20px;
+      padding: 10px 26px;
+      font-size: 11px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="contact-page-head">
+  <a href="index.html" class="back-link">&larr; Voltar ao site</a>
+  <h1>Contactos</h1>
+</div>
+
+<div class="contact-page-wrap">
+  <div class="contact-card">
+    <div class="contact-col contact-col--info">
+      <div class="location-pin">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.4"/>
+        </svg>
+        <h2 class="section-title location-title">Castelo Branco</h2>
+      </div>
+      <p class="location-address">R. João Carlos Abrunhosa N.º 21, 6000-239</p>
+      <div class="location-contacts">
+        <div class="location-contact-line">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5c0-.55.45-1 1-1h2.7c.5 0 .92.36 1 .85l.6 3.6c.06.4-.1.8-.42 1.05L7.2 10.6a13.5 13.5 0 0 0 6.2 6.2l1.1-1.68c.25-.32.65-.48 1.05-.42l3.6.6c.49.08.85.5.85 1V19c0 .55-.45 1-1 1h-1.5C9.3 20 4 14.7 4 6.5V5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span class="contact-num"><a href="tel:+351272347190">+351 272 347 190</a><small class="call-note">Chamada para a rede fixa nacional</small></span>
+        </div>
+        <div class="location-contact-line">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5c0-.55.45-1 1-1h2.7c.5 0 .92.36 1 .85l.6 3.6c.06.4-.1.8-.42 1.05L7.2 10.6a13.5 13.5 0 0 0 6.2 6.2l1.1-1.68c.25-.32.65-.48 1.05-.42l3.6.6c.49.08.85.5.85 1V19c0 .55-.45 1-1 1h-1.5C9.3 20 4 14.7 4 6.5V5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span class="contact-num"><a href="tel:+351961941660">+351 961 941 660</a><small class="call-note">Chamada para a rede móvel nacional</small></span>
+        </div>
+        <div class="location-contact-line">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 6.5 12 13l8-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <a href="mailto:tabuas.come@gmail.com">tabuas.come@gmail.com</a>
+        </div>
+      </div>
+      <div class="location-socials">
+        <a href="https://www.instagram.com/tabuas.come/" target="_blank" rel="noopener" class="social-circle" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="4.6" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://web.facebook.com/Tabuas.Come/?locale=pt_PT&_rdc=1&_rdr#" target="_blank" rel="noopener" class="social-circle" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="contact-col contact-col--hours">
+      <h3 class="hours-title">Horários</h3>
+      <div class="hours-columns">
+        <div class="hours-row hours-row-top">
+          <div class="hours-col">
+            <h4>Segunda</h4>
+            <p>Encerrado</p>
+          </div>
+        </div>
+        <div class="hours-row hours-row-bottom">
+          <div class="hours-col">
+            <h4>Terça a Sábado</h4>
+            <p>12h30 às 15h00</p>
+            <p>19h30 às 22h00</p>
+          </div>
+          <div class="hours-col">
+            <h4>Domingo</h4>
+            <p>12h30 às 15h00</p>
+            <p>Encerrado</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.zomatobook.com/widget/makereservation03.aspx?id=362873XJ5J6Z" class="btn location-cta-btn" target="_blank" rel="noopener noreferrer">Reservar Mesa</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer" id="contactos">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="img/tabuas-logo-hd.png" alt="Tábuas, Restaurante & Steakhouse" class="footer-logo-img" />
+        <p class="footer-tagline">Restaurante &amp; Steakhouse</p>
+        <div class="footer-badges">
+          <a href="https://livrodeelogios.com/elogiar/tabuascome" class="complaints-badge compliments-badge" target="_blank" rel="noopener">
+            <span>LIVRO DE<br/>ELOGIOS</span>
+          </a>
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener" class="complaints-badge">
+            <span>LIVRO DE<br/>RECLAMAÇÕES</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-details">
+        <div class="footer-legal-links footer-legal-links--details">
+          <a href="cookies.html">Política de Cookies</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+          <a href="https://livrodeelogios.com/elogiar/tabuascome" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tábuas.Come · Todos os direitos reservados.</span>
+      <div class="footer-bottom-links">
+        <a href="cookies.html">Política de Cookies</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="https://livrodeelogios.com/elogiar/tabuascome" target="_blank" rel="noopener">Livro de Elogios</a>
+          <a href="trabalhe-connosco.html">Trabalhe Connosco</a>
+      </div>
+      <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
