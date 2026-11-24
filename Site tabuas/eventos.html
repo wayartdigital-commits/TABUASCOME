@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Eventos e Cozido à Portuguesa em Castelo Branco | Tábuas.Come</title>
-<meta name="description" content="Eventos do Tábuas.Come em Castelo Branco: Cozido à Portuguesa no primeiro domingo de cada mês ao almoço, jantares temáticos e datas especiais." />
+<meta name="description" content="Eventos e novidades do Tábuas.Come em Castelo Branco: Cozido à Portuguesa no primeiro domingo de cada mês, novo interior, novas carnes, paella, sobremesa de outono e carta de sangrias." />
 <meta name="keywords" content="cozido à portuguesa Castelo Branco, almoço de domingo Castelo Branco, eventos Castelo Branco, jantares temáticos Castelo Branco, Tábuas.Come" />
 <link rel="canonical" href="https://www.tabuascome.com/eventos.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Tábuas.Come" />
 <meta property="og:locale" content="pt_PT" />
 <meta property="og:title" content="Eventos e Cozido à Portuguesa em Castelo Branco | Tábuas.Come" />
-<meta property="og:description" content="Eventos do Tábuas.Come em Castelo Branco: Cozido à Portuguesa no primeiro domingo de cada mês ao almoço, jantares temáticos e datas especiais." />
+<meta property="og:description" content="Eventos e novidades do Tábuas.Come em Castelo Branco: Cozido à Portuguesa no primeiro domingo de cada mês, novo interior, novas carnes, paella, sobremesa de outono e carta de sangrias." />
 <meta property="og:url" content="https://www.tabuascome.com/eventos.html" />
 <meta property="og:image" content="https://www.tabuascome.com/img/partilha-tabuascome.jpg?v=2" />
 <meta property="og:image:width" content="1200" />
@@ -125,12 +125,50 @@
   .events-empty h2 { font-size: 24px; margin: 0 0 10px; color: var(--gold-light); }
   .events-empty p { color: var(--cream-dim); font-size: 14.5px; margin: 0 0 20px; }
   .events-grid:has(.event-card) ~ .events-empty { display: none; }
+  .event-card--notice { align-self: start; border-color: rgba(184, 134, 63, 0.55); background: rgba(184, 134, 63, 0.08); }
+  .soldout-list { list-style: none; margin: 16px 0 0; padding: 0; }
+  .soldout-list li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid rgba(244, 239, 228, 0.1); color: var(--cream); font-size: 14.5px; }
+  .soldout-list li span:last-child { color: var(--gold-light); text-align: right; }
+
+  /* PC: cada evento numa linha, foto e texto lado a lado (alternando o lado) */
+  @media (min-width: 761px) {
+    .events-grid { grid-template-columns: 1fr; gap: 32px; }
+    .event-card:has(figure) { display: grid; grid-template-columns: 46% 1fr; align-items: stretch; }
+    .event-card:has(figure):nth-child(even of .event-card:has(figure)) { grid-template-columns: 1fr 46%; }
+    .event-card:has(figure):nth-child(even of .event-card:has(figure)) figure { order: 2; }
+    .event-card figure { min-height: 340px; }
+    .event-card:has(figure) img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+    .event-card-body { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .event-card h2 { font-size: 30px; line-height: 1.2; margin-bottom: 14px; }
+    .event-card p { font-size: 16px; line-height: 1.8; }
+    .event-card .event-date { font-size: 12px; line-height: 1.6; margin-bottom: 12px; }
+    .event-notes { font-size: 14px !important; align-self: stretch; }
+    .event-card--notice { align-self: auto; }
+    .event-card--notice .event-card-body { padding: 40px 44px; }
+    .soldout-list { align-self: stretch; }
+    .soldout-list li { font-size: 16px; padding: 12px 0; }
+  }
+
+  /* Telemóvel: cartões 2 a 2, texto mais pequeno; o aviso de lotação ocupa a largura toda */
   @media (max-width: 760px) {
     .page-head { padding: 22px 20px 0; }
     .back-link { display: block; margin-bottom: 26px; font-size: 11px; }
-    .page-wrap { padding: 18px 24px 56px; }
-    .page-lede { font-size: 15px; }
-    .events-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+    .page-wrap { padding: 18px 12px 56px; }
+    .page-lede { font-size: 14px; line-height: 1.7; }
+    .events-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+    .event-card--notice { grid-column: 1 / -1; align-self: auto; }
+    .event-card img { aspect-ratio: 1 / 1; }
+    .event-card figcaption { font-size: 8.5px; right: 6px; bottom: 4px; }
+    .event-card-body { padding: 12px 12px 14px; display: flex; flex-direction: column; flex: 1; }
+    .event-card--notice .event-card-body { padding: 18px 16px 20px; }
+    .event-card .event-date { font-size: 9px; letter-spacing: 0.08em; line-height: 1.5; margin-bottom: 6px; }
+    .event-card h2 { font-size: 16px; line-height: 1.25; margin-bottom: 6px; }
+    .event-card--notice h2 { font-size: 20px; }
+    .event-card p { font-size: 12.5px; line-height: 1.55; }
+    .event-notes { font-size: 11px !important; margin-top: 10px !important; padding-top: 8px; }
+    .soldout-list li { font-size: 13.5px; padding: 9px 0; }
+    .event-card .btn { display: flex; justify-content: center; width: 100%; margin-top: auto; padding: 10px 6px; font-size: 9.5px; letter-spacing: 0.08em; }
+    .event-card-body > p:last-of-type { margin-bottom: 14px; }
     .events-empty { margin-top: 40px; padding: 28px 20px; }
   }
 </style>
@@ -143,7 +181,7 @@
 </div>
 
 <div class="page-wrap">
-  <p class="page-lede">Jantares temáticos, provas de vinhos, datas especiais e momentos que já partilhámos consigo. Acompanhe aqui o que se passa no Tábuas.Come.</p>
+  <p class="page-lede">Novidades da casa, jantares temáticos, datas especiais e momentos que já partilhámos consigo. Acompanhe aqui o que se passa no Tábuas.Come.</p>
 
   <div class="events-grid">
     <!--
@@ -159,16 +197,85 @@
       </div>
     </article>
     -->
+    <article class="event-card event-card--notice">
+      <div class="event-card-body">
+        <p class="event-date">Dezembro 2026 · Janeiro 2027</p>
+        <h2>Lotação Esgotada</h2>
+        <p>Obrigado! Estas datas já estão esgotadas.</p>
+        <ul class="soldout-list">
+          <li><span>11, 18 e 19 de dezembro</span><span>Jantares</span></li>
+          <li><span>24, 25 e 31 de dezembro</span><span>Todo o dia</span></li>
+          <li><span>1 de janeiro</span><span>Todo o dia</span></li>
+        </ul>
+        <p class="event-notes">Nas restantes datas, reserve com antecedência.</p>
+        <a href="https://www.zomatobook.com/widget/makereservation03.aspx?id=362873XJ5J6Z" class="btn page-btn" target="_blank" rel="noopener noreferrer">Reservar Mesa</a>
+      </div>
+    </article>
     <article class="event-card">
       <figure>
         <img src="img/eventos/cozido-portuguesa.jpg" alt="Cozido à Portuguesa servido em travessa de barro" loading="lazy" />
         <figcaption>Imagem ilustrativa</figcaption>
       </figure>
       <div class="event-card-body">
-        <p class="event-date">1.º domingo de cada mês · Almoço · Próximas datas: 1 de novembro e 6 de dezembro</p>
+        <p class="event-date">1.º domingo do mês · Almoço</p>
         <h2>Domingos de Cozido à Portuguesa</h2>
-        <p>No primeiro domingo de cada mês, ao almoço, o clássico Cozido à Portuguesa chega à mesa do Tábuas.Come, para partilhar em família ou entre amigos. Disponível até dezembro de 2026.</p>
-        <p class="event-notes">Reserva aconselhável. Prato disponível salvo ruturas.</p>
+        <p>O clássico Cozido, para partilhar à mesa. Próximo: 6 de dezembro.</p>
+        <p class="event-notes">Reserva aconselhável.</p>
+        <a href="https://www.zomatobook.com/widget/makereservation03.aspx?id=362873XJ5J6Z" class="btn page-btn" target="_blank" rel="noopener noreferrer">Reservar Mesa</a>
+      </div>
+    </article>
+    <article class="event-card">
+      <figure>
+        <img src="img/eventos/novo-interior.jpg" alt="Sala renovada do Tábuas.Come com os pilares em granito do antigo lagar" loading="lazy" />
+      </figure>
+      <div class="event-card-body">
+        <p class="event-date">Novidade · Espaço</p>
+        <h2>Novo Interior</h2>
+        <p>Nova decoração, os mesmos pilares em granito. Venha conhecer.</p>
+        <a href="https://www.zomatobook.com/widget/makereservation03.aspx?id=362873XJ5J6Z" class="btn page-btn" target="_blank" rel="noopener noreferrer">Reservar Mesa</a>
+      </div>
+    </article>
+    <article class="event-card">
+      <figure>
+        <img src="img/eventos/novas-carnes.jpg" alt="Carnes grelhadas servidas em tábua de madeira com pimentos e flor de sal" loading="lazy" />
+      </figure>
+      <div class="event-card-body">
+        <p class="event-date">Novidade · Carnes</p>
+        <h2>Novas Carnes, Novos Sabores</h2>
+        <p>Presas de porco preto, costeletas de borrego e a nova Tábua Txuleton.</p>
+        <a href="menus.html" class="btn page-btn">Ver Menu</a>
+      </div>
+    </article>
+    <article class="event-card">
+      <figure>
+        <img src="img/eventos/mousse-castanha-abobora.jpg" alt="Mousse de castanha com compota caseira de abóbora e laranja desidratada" loading="lazy" style="object-position: center 40%;" />
+      </figure>
+      <div class="event-card-body">
+        <p class="event-date">Novidade · Sobremesa</p>
+        <h2>Mousse de Castanha</h2>
+        <p>Com compota caseira de abóbora. O outono, à colher.</p>
+        <a href="menus.html" class="btn page-btn">Ver Menu</a>
+      </div>
+    </article>
+    <article class="event-card">
+      <figure>
+        <img src="img/eventos/paella-peixe-marisco.jpg" alt="Paella de peixe e marisco com camarão, bivalves e lima" loading="lazy" />
+      </figure>
+      <div class="event-card-body">
+        <p class="event-date">Novidade · Peixe</p>
+        <h2>Paella de Peixe e Marisco</h2>
+        <p>Robalo, camarão e bivalves. Já na carta.</p>
+        <a href="menus.html" class="btn page-btn">Ver Menu</a>
+      </div>
+    </article>
+    <article class="event-card">
+      <figure>
+        <img src="img/eventos/carta-sangrias.jpg" alt="Jarro de sangria com fruta e hortelã" loading="lazy" style="object-position: center 35%;" />
+      </figure>
+      <div class="event-card-body">
+        <p class="event-date">Novidade · Bebidas</p>
+        <h2>Carta de Sangrias</h2>
+        <p>Nova carta de sangrias, para brindar à mesa.</p>
         <a href="https://www.zomatobook.com/widget/makereservation03.aspx?id=362873XJ5J6Z" class="btn page-btn" target="_blank" rel="noopener noreferrer">Reservar Mesa</a>
       </div>
     </article>
